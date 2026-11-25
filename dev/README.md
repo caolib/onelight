@@ -28,7 +28,7 @@ node dev/cdp.mjs reload
 node dev/cdp.mjs shot                 # 输出到 dev/shot.png
 node dev/cdp.mjs shot out.png
 
-# 监听主题目录产物，构建变化时自动刷新并截图（配合 npm run watch）
+# 监听主题目录产物，构建变化时自动刷新并截图（配合 pnpm watch）
 node dev/cdp.mjs watch
 
 # 在页面里执行 JS
@@ -51,7 +51,7 @@ node dev/cdp.mjs unhover
 
 ```bash
 # 终端 1：编译
-npm run watch
+pnpm watch
 # 终端 2：预览
 node dev/cdp.mjs watch
 ```

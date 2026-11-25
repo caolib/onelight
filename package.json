@@ -3,6 +3,7 @@
   "version": "1.12.4",
   "private": true,
   "description": "OneLight — a Typora theme",
+  "packageManager": "pnpm@12.5.1",
   "scripts": {
     "build": "node scripts/build.mjs",
     "watch": "node scripts/build.mjs --watch"

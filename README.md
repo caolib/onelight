@@ -17,9 +17,9 @@
 源码是 SCSS，编译产物直接写到 Typora 主题目录。
 
 ```bash
-npm install
-npm run build     # 一次性构建
-npm run watch     # 监听 src/，改动即重新编译
+pnpm install
+pnpm build     # 一次性构建
+pnpm watch     # 监听 src/，改动即重新编译
 ```
 
 默认输出到 `%APPDATA%\Typora\themes`，可通过环境变量 `TYPORA_THEMES` 覆盖。

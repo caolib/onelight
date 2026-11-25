@@ -11,9 +11,9 @@ Typora 主题（OneLight）。源码是 SCSS，编译产物是**单文件 CSS**�
 ## 构建
 
 ```bash
-npm install
-npm run build     # 一次性构建
-npm run watch     # 监听 src/**/*.scss，自动重新编译
+pnpm install
+pnpm build     # 一次性构建
+pnpm watch     # 监听 src/**/*.scss，自动重新编译
 ```
 
 `scripts/build.mjs` 用 dart-sass 编译两个入口，输出路径由环境变量 `TYPORA_THEMES` 决定（默认 `%APPDATA%\Typora\themes`）。产物不提交到本仓库。
