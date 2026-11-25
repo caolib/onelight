@@ -39,7 +39,9 @@ ol>li::marker {
     margin-left: -1.5em;
     width: 1.2em;
     height: 1.2rem;
-    margin-top: calc(1em - 5px);
+    top: 50%;
+    margin-top: 0;
+    transform: translateY(-50%);
 }
 
 #write li>p {
