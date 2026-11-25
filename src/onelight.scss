@@ -2,7 +2,6 @@
 @use 'style/code';
 @use 'style/font';
 @use 'style/mermaid';
-@use 'style/kbd';
 @use 'style/icon';
 @use 'style/sidebar';
 @use 'style/table';
@@ -192,13 +191,6 @@ hr {
 }
 
 
-
-/* ---------------->> 键盘快捷键 <<---------------- */
-
-kbd {
-    font-family: var(--main-font-family);
-    font-weight: 700;
-}
 
 /* ---------------->> 目录 <<---------------- */
 p.md-toc-content {
