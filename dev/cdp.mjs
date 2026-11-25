@@ -80,7 +80,7 @@ async function reloadTheme(cdp) {
   return cdp.evalExpr(`(() => {
     document.getElementById('__typora_dev_css')?.remove();
     const links = [...document.querySelectorAll('link[rel="stylesheet"]')]
-      .filter(l => /userData[\\\\/]themes[\\\\/][^\\\\/]+\\.css$/i.test(l.getAttribute('href') || ''));
+      .filter(l => /userData[\\\\/]themes[\\\\/][^\\\\/]+\\.css(\\?.*)?$/i.test(l.getAttribute('href') || ''));
     const touched = [];
     for (const l of links) {
       const base = (l.href || l.getAttribute('href') || '').split('?')[0];
