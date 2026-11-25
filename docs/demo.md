@@ -81,8 +81,6 @@ export default defineConfig({
 
 ## 5 列表
 
-> 有、无序列表样式来自[dyzj](https://theme.typora.io/theme/dyzj/)主题，感谢作者muggledy
-
 无序列表：
 
 
@@ -157,11 +155,11 @@ $$
 
 ## 10 链接
 
-可以直接用尖括号包裹链接`<https://clb.pages.dev>`或者使用`[链接名](链接地址)`
+可以直接用尖括号包裹链接`<url>`或者使用`[title](url)`
 
-<https://clb.pages.dev>
+<https://kirakira.dpdns.org/>
 
-[typora-onelight-theme](https://github.com/caolib/typora-onelight-theme)
+[kira](https://kirakira.dpdns.org/)
 
 ## 11 音频
 
