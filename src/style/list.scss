@@ -35,6 +35,10 @@ ol>li::marker {
 
 
 /* 任务列表 */
+#write ul>li.md-task-list-item {
+    list-style-type: none;
+}
+
 #write input[type=checkbox] {
     margin-left: -1.5em;
     width: 1.2em;
@@ -42,11 +46,31 @@ ol>li::marker {
     top: 50%;
     margin-top: 0;
     transform: translateY(-50%);
+    -webkit-appearance: none;
+    appearance: none;
+    border: 1.5px solid var(--light-color);
+    border-radius: 4px;
+    background: transparent;
+    cursor: pointer;
+}
+
+#write input[type=checkbox]:checked {
+    border-color: var(--main-green);
+    background-color: var(--main-green);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.5l3 3L12.5 5' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-size: 80% 80%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 #write li>p {
     margin: 0;
     padding: 0;
+}
+
+/* 勾选框与文字间距（勾选框为绝对定位，只能从文字侧留白） */
+#write li.md-task-list-item>p {
+    padding-left: .4em;
 }
 
 /* ---------------->> 完成任务的删除线 <<---------------- */
