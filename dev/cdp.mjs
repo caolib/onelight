@@ -167,6 +167,15 @@ try {
   } else if (cmd === 'unhover') {
     await mouseMove(cdp, 2, 2);
     console.log('mouse moved to (2, 2)');
+  } else if (cmd === 'fonts') {
+    const sel = process.argv[3] || '#write p';
+    await cdp.send('DOM.enable');
+    await cdp.send('CSS.enable');
+    const { root } = await cdp.send('DOM.getDocument');
+    const { nodeId } = await cdp.send('DOM.querySelector', { nodeId: root.nodeId, selector: sel });
+    if (!nodeId) throw new Error('selector not found: ' + sel);
+    const { fonts } = await cdp.send('CSS.getPlatformFontsForNode', { nodeId });
+    console.log(JSON.stringify(fonts, null, 2));
   } else if (cmd === 'reload') {
     console.log(JSON.stringify(await reloadTheme(cdp)));
   } else if (cmd === 'shot') {
