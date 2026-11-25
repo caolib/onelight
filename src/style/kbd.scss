@@ -2,6 +2,8 @@ kbd {
     position: relative;
     outline: none;
     background-color: var(--kbd-bg-color);
+    /* 清除 Typora 内置 kbd 的白色内阴影，立体感交给 ::before */
+    box-shadow: none;
     border-radius: 8px;
     transform: scale(1.1);
     transition: 0.3s ease-in-out;
