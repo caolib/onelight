@@ -100,7 +100,7 @@ export default defineConfig({
 任务列表：
 
 - [x] 已完成任务
-- [x] 未完成任务
+- [ ] 未完成任务
 
 ## 6 文本
 
