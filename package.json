@@ -1,0 +1,13 @@
+{
+  "name": "onelight-theme",
+  "version": "1.12.4",
+  "private": true,
+  "description": "OneLight — a Typora theme",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "watch": "node scripts/build.mjs --watch"
+  },
+  "devDependencies": {
+    "sass": "^1.108.2"
+  }
+}

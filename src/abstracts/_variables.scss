@@ -1,0 +1,76 @@
+/* 浅色主题变量 */
+:root {
+    --bg-color: #F8F8F6;
+    --text-color: black;
+    --primary-btn-text-color: #fff;
+    --active-file-bg-color: #eee;
+    --window-border: 1px solid var(--active-file-bg-color);
+    --active-file-text-color: inherit;
+    --active-file-border-color: var(--main-red);
+    --side-bar-bg-color: var(--bg-color);
+    --item-hover-bg-color: hsla(0, 0%, 90%, .59);
+    --item-hover-text-color: var(--main-red);
+    --select-text-font-color: white !important;
+    --select-text-bg-color: #3266D0;
+    --side-bar-menu-active-tint: var(--main-green);
+    --outline-color: #a5a5a5;
+    --tb-border-color: #e8e8e8;
+    /* ---------------->> 主题色 <<---------------- */
+    --theme-color: #d97757;
+    --main-red: #ff6b6b;
+    --main-green: #2ed573;
+    --main-purple: #c94ae9;
+    --main-yellow: #f9b03d;
+    --light-color: #b2b2b2;
+    --theme-light-color: white;
+    --border-color: var(--theme-color);
+    --border: solid 0.5px var(--theme-color)94;
+    /* ---------------->> 悬浮 <<---------------- */
+    --item-bg-color-red: rgb(from var(--main-red) r g b / 0.22);
+    --item-bg-color-blue: rgb(from var(--theme-color) r g b / 0.26);
+    /* ---------------->> 阴影 <<---------------- */
+    --box-shadow: 0px 4px 4px rgba(0, 0, 0, .1);
+    --box-shadow-large: 0 8px 15px rgba(0, 0, 0, .3);
+    --drop-shadow: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.5));
+    --brightness: brightness(1);
+    /* ---------------->> 过渡 <<---------------- */
+    --transition: box-shadow 0.3s ease, transform 0.3s ease;
+    --bg-transition: background-color 0.5s ease;
+    /* ---------------->> 左到右透明渐变色 <<---------------- */
+    --gradient-color: linear-gradient(to right, var(--theme-light-color), rgba(255, 255, 255, 0));
+    /* ---------------->> 圆角 <<---------------- */
+    --radius-xsmall: 5px;
+    --radius-small: 10px;
+    --radius-large: 15px;
+    --radius-xlarge: 20px;
+    /* ---------------->> 云母 <<---------------- */
+    --mica-bg: rgba(255, 255, 255, 0.65);
+    --mica-blur: blur(12px) saturate(1.3);
+    --mica-border: 1px solid rgba(255, 255, 255, 0.15);
+    --mica-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    --mica-transition: background-color 0.5s ease, box-shadow 0.5s ease;
+    --trans-border: 2px solid transparent;
+    /* ---------------->> Mermaid 图表，详情见 https://support.typoraio.cn/Diagram-Options/ <<---------------- */
+    /* 主题，可切换为 "default" "base" "dark" "forest" "neutral" "night" */
+    --mermaid-theme: default;
+    /* 字体 */
+    --mermaid-font-family: var(--main-font-family), "trebuchet ms", verdana, arial, sans-serif;
+    /* 时序图编号 or "off", see https://mermaid-js.github.io/mermaid/#/sequenceDiagram?id=sequencenumbers*/
+    --mermaid-sequence-numbers: on;
+    /* 线条风格 可切换为 "linear","basis","natural","step" */
+    --mermaid-flowchart-curve: linear;
+    /* 甘特图左侧边距 */
+    --mermaid--gantt-left-padding: 75;
+    /* 时序图主题 simple：普通 hand：手绘风格 */
+    --sequence-theme: hand;
+}
+
+/* 来自原 onelight.user.css：关闭菜单/主界面背景图 */
+div#megamenu-section-open {
+    background: none;
+}
+
+content {
+    background: none;
+}
