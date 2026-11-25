@@ -1,12 +1,12 @@
 kbd {
     position: relative;
     outline: none;
-    background-color: #f4f5f6;
+    background-color: var(--kbd-bg-color);
     border-radius: 8px;
     transform: scale(1.1);
     transition: 0.3s ease-in-out;
     cursor: default;
-    color: #666;
+    color: var(--kbd-text-color);
     display: inline-flex;
     margin: 0 10px;
 }
@@ -19,7 +19,7 @@ kbd::before {
     right: 0;
     bottom: 0;
     border-radius: 8px;
-    box-shadow: inset 0px -4px 0px #dddddd,
+    box-shadow: inset 0px -4px 0px var(--kbd-inset-shadow-color),
         0px -4px 0px var(--bg-color);
     transition: 0.3s ease-in-out;
     z-index: -1;

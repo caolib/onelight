@@ -64,6 +64,10 @@
     --mermaid--gantt-left-padding: 75;
     /* 时序图主题 simple：普通 hand：手绘风格 */
     --sequence-theme: hand;
+    /* ---------------->> 键盘按键 <<---------------- */
+    --kbd-bg-color: #f4f5f6;
+    --kbd-text-color: #666;
+    --kbd-inset-shadow-color: #dddddd;
 }
 
 /* 来自原 onelight.user.css：关闭菜单/主界面背景图 */
