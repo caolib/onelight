@@ -15,6 +15,9 @@
     --side-bar-menu-active-tint: var(--main-green);
     --outline-color: #a5a5a5;
     --tb-border-color: #e8e8e8;
+    --tb-header-bg: color-mix(in srgb, var(--theme-color) 12%, transparent);
+    --tb-zebra-bg: color-mix(in srgb, var(--text-color) 3%, transparent);
+    --tb-hover-bg: color-mix(in srgb, var(--theme-color) 8%, transparent);
     /* ---------------->> 主题色 <<---------------- */
     --theme-color: #d97757;
     --main-red: #ff6b6b;

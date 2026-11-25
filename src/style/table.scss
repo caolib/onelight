@@ -1,17 +1,14 @@
-:root {
-    --tb-hover-bg: color-mix(in srgb, var(--theme-color) 20%, transparent);
-}
-
 /* ---------------->> 表格 <<---------------- */
 figure.md-table-fig.table-figure {
     border: 0;
     box-shadow: var(--box-shadow);
     border-radius: var(--radius-small);
+    overflow: hidden;
 }
 
 /* ---------------->> 表格调节组件 <<---------------- */
 .ty-table-edit {
-    border-radius: var(--radius-xsmall);
+    border-radius: var(--radius-small);
     background-color: var(--mica-bg) !important;
     backdrop-filter: var(--mica-blur);
     border: var(--mica-border);
@@ -50,30 +47,33 @@ td.md-reset.md-grid-ext>a {
 
 /* ---------------->> 表格行 <<---------------- */
 #write table tr {
-    background-color: var(--theme-light-color);
+    background-color: transparent;
     border: 0;
 }
 
-/* ---------------->> 斑马纹 <<---------------- */
-#write table tr:nth-child(2n) {
-    background-color: var(--bg-color);
+/* ---------------->> 极淡斑马纹 <<---------------- */
+#write table tbody tr:nth-child(2n) {
+    background-color: var(--tb-zebra-bg);
 }
 
+/* 仅保留横向分隔线 */
 #write table tr td,
 #write table tr th {
-    border: 0.5px solid var(--tb-border-color);
+    border: 0;
+    border-bottom: 0.5px solid var(--tb-border-color);
     font-size: .9rem;
-    line-height: 1.5;
-    padding: 5px 10px;
+    line-height: 1.6;
+    padding: 8px 14px;
 }
 
 /* ---------------->> 表头 <<---------------- */
 #write table tr th {
-    background-color: var(--tb-hover-bg);
-    color: var(--theme-color);
-    font-weight: 700
+    background-color: var(--tb-header-bg);
+    color: var(--text-color);
+    font-weight: 700;
 }
 
-#write table tr:hover {
-    background: var(--tb-hover-bg);
+/* ---------------->> 行悬浮（写在斑马纹之后以覆盖其底色） <<---------------- */
+#write table tbody tr:hover {
+    background-color: var(--tb-hover-bg);
 }

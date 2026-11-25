@@ -14,6 +14,10 @@
     --side-bar-menu-active-tint: var(--main-green);
     --outline-color: #7a7a7a;
     --tb-border-color: #393e49;
+    /* 深色下需提高浓度，否则表头偏浑浊、斑马纹不可见 */
+    --tb-header-bg: oklch(from var(--theme-color) 0.45 calc(c * 0.85) h);
+    --tb-zebra-bg: color-mix(in srgb, var(--text-color) 7%, transparent);
+    --tb-hover-bg: color-mix(in srgb, var(--theme-color) 14%, transparent);
     /* ---------------->> 暗化比例 <<---------------- */
     --darken-ratio: 95%;
     /* ---------------->> 主题色 <<---------------- */
