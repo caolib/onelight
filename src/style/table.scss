@@ -1,13 +1,15 @@
 :root {
     --tb-hover-bg: color-mix(in srgb, var(--theme-color) 20%, transparent);
-    --border-color: var(--theme-color);
-    --b: 2px solid var(--border-color);
 }
 
+/* ---------------->> 表格 <<---------------- */
 figure.md-table-fig.table-figure {
+    border: 0;
     box-shadow: var(--box-shadow);
+    border-radius: var(--radius-small);
 }
 
+/* ---------------->> 表格调节组件 <<---------------- */
 .ty-table-edit {
     border-radius: var(--radius-xsmall);
     background-color: var(--mica-bg) !important;
@@ -18,10 +20,12 @@ figure.md-table-fig.table-figure {
     z-index: 999;
 }
 
+/* 删除表格按钮 */
 .ty-delete:before {
     color: var(--main-red);
 }
 
+/* ---------------->> 表格行列调整控件 <<---------------- */
 .popover.bottom.md-table-resize-popover {
     width: fit-content;
 }
@@ -44,23 +48,32 @@ td.md-reset.md-grid-ext>a {
     padding: 0;
 }
 
+/* ---------------->> 表格行 <<---------------- */
 #write table tr {
-    border: var(--b);
+    background-color: var(--theme-light-color);
+    border: 0;
+}
+
+/* ---------------->> 斑马纹 <<---------------- */
+#write table tr:nth-child(2n) {
+    background-color: var(--bg-color);
 }
 
 #write table tr td,
 #write table tr th {
-    border-left: var(--b);
+    border: 0.5px solid var(--tb-border-color);
     font-size: .9rem;
     line-height: 1.5;
     padding: 5px 10px;
 }
 
+/* ---------------->> 表头 <<---------------- */
 #write table tr th {
     background-color: var(--tb-hover-bg);
+    color: var(--theme-color);
     font-weight: 700
 }
 
-#write table tr td:hover {
+#write table tr:hover {
     background: var(--tb-hover-bg);
 }
