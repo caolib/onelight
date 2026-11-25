@@ -24,7 +24,7 @@ pnpm watch     # 监听 src/**/*.scss，自动重新编译
 - **深色入口 `@use 'onelight'` 后再覆盖**。Sass 的 `@use` 有模块缓存，同一模块的 CSS 只输出一次，所以深色入口只需额外 `@use` 深色专属模块（`kbd/kbd-dark`）和 `abstracts/variables-dark`。
 - `@use` 的书写顺序就是 CSS 输出顺序。`abstracts/variables` 必须放在浅色入口的**最后**，因为多个 style 模块（code、font、mermaid、sidebar、table、blockquote2）自己也定义了 `:root`，入口变量需要覆盖它们。同理 `variables-dark` 放在深色入口最后。
 - `abstracts/_variables.scss` / `_variables-dark.scss` 是全部 CSS 变量的集中地。颜色等运行期主题切换必须继续使用 CSS 自定义属性，不要改成 SCSS 变量；SCSS 变量只用于编译期常量。
-- 具体规则按类别在 `src/style/<类别>/`：title、code、table、list、blockquote、kbd、sidebar、editor、icon、mermaid、font。
+- 具体规则全部平铺在 `src/style/` 下，按文件区分：title、code、table、list、blockquote、kbd、sidebar、editor、icon、mermaid、font。新增样式直接加文件并在入口 `@use`，不要再建子目录。
 - 主题色 `--theme-color` 的发布默认值是 `#d97757`（橙色），定义在两个 variables 文件中；不要改回蓝色。
 
 ## 资源路径

@@ -2,13 +2,13 @@
 @use 'style/code';
 @use 'style/font';
 @use 'style/mermaid';
-@use 'style/kbd/kbd';
+@use 'style/kbd';
 @use 'style/icon';
-@use 'style/sidebar/sidebar';
-@use 'style/table/table-square';
-@use 'style/title/title-simple';
-@use 'style/list/list-simple';
-@use 'style/blockquote/blockquote2';
+@use 'style/sidebar';
+@use 'style/table-square';
+@use 'style/title-simple';
+@use 'style/list-simple';
+@use 'style/blockquote2';
 @use 'abstracts/variables';
 
 
