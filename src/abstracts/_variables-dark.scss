@@ -31,6 +31,8 @@
     --main-green: color-mix(in srgb, var(--main-green-original) var(--darken-ratio), black);
     --main-purple: color-mix(in srgb, var(--main-purple-original) var(--darken-ratio), black);
     --main-yellow: color-mix(in srgb, var(--main-yellow-original) var(--darken-ratio), black);
+    /* 深色下改用亮一档，避免警告文字沉进底色 */
+    --alert-warning-text-color: #e8b339;
     --light-color: #6e6e6e;
     --theme-light-color: #353a45;
     --border-color: var(--theme-color);

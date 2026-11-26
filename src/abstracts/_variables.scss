@@ -24,6 +24,8 @@
     --main-green: #2ed573;
     --main-purple: #c94ae9;
     --main-yellow: #f9b03d;
+    /* 警告框文字色：黄色对比度不足，改用深一档 */
+    --alert-warning-text-color: #8a5a00;
     --light-color: #b2b2b2;
     --theme-light-color: white;
     --border-color: var(--theme-color);

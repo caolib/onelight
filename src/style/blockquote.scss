@@ -6,25 +6,14 @@
 
     /* ---------------->> 引用块 <<---------------- */
     blockquote {
-        background: var(--theme-light-color);
+        background: color-mix(in srgb, var(--theme-color) 6%, var(--bg-color));
         border-bottom-right-radius: 10px;
         border-left: 5px solid var(--theme-color);
         border-top-right-radius: 10px;
         box-shadow: var(--box-shadow);
-        color: rgb(from var(--text-color) r g b / 0.8);
-        font-size: .9em;
-        margin-bottom: 16px;
-        margin-top: 16px;
-        overflow: auto;
-        -webkit-overflow-scrolling: touch;
-        padding: 10px 10px 10px 20px;
-        transition: var(--bg-transition)
-    }
-
-    blockquote:hover {
-        transition: var(--bg-transition);
-        background: var(--theme-light-color);
-        box-shadow: var(--box-shadow-large);
+        color: color-mix(in srgb, var(--text-color) 90%, transparent);
+        margin: 16px 0;
+        padding: 12px 16px;
     }
 
     blockquote p {
@@ -52,9 +41,11 @@
 
     .md-alert-warning {
         --alert-theme-color: rgb(250, 173, 20);
+        /* 黄色作文字色对比度不足，标题/粗体改用可读的深/浅一档 */
+        --alert-text-color: var(--alert-warning-text-color);
 
         .md-alert-text-container[data-text="warning"] {
-            color: rgb(250, 173, 20);
+            color: var(--alert-text-color);
         }
     }
 
@@ -67,9 +58,8 @@
         border-radius: 10px;
         background: rgb(from var(--alert-theme-color) r g b / var(--transparency));
         box-shadow: var(--box-shadow);
-        transition: var(--bg-transition);
         border: solid 2px var(--alert-theme-color);
-        transition: backdrop-filter 0.3s ease-in-out;
+        transition: var(--bg-transition), backdrop-filter 0.3s ease-in-out;
 
         &:hover {
             backdrop-filter: blur(10px);
@@ -93,7 +83,7 @@
 
         /* 粗体 */
         strong {
-            color: var(--alert-theme-color);
+            color: var(--alert-text-color, var(--alert-theme-color));
         }
 
         blockquote {
@@ -102,9 +92,8 @@
             border-radius: 10px;
             background: rgb(from var(--alert-theme-color) r g b / 0.2);
             box-shadow: var(--box-shadow);
-            transition: var(--bg-transition);
             border: solid 2px var(--alert-theme-color);
-            transition: backdrop-filter 0.3s ease-in-out;
+            transition: var(--bg-transition), backdrop-filter 0.3s ease-in-out;
 
             &:hover {
                 background-color: unset;
