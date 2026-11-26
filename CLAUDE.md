@@ -17,7 +17,7 @@ pnpm watch     # 监听 src/**/*.scss，自动重新编译
 pnpm lint      # stylelint：语法/低级错误 + 颜色字面量集中
 ```
 
-`scripts/build.mjs` 用 dart-sass 编译两个入口，输出路径由环境变量 `TYPORA_THEMES` 决定（默认 `%APPDATA%\Typora\themes`）。产物不提交到本仓库。
+`scripts/build.mjs` 用 dart-sass 编译两个入口，输出路径由环境变量 `TYPORA_THEMES` 决定（默认 `%APPDATA%\Typora\themes`）。产物不提交到本仓库。`--minify`（或 `MINIFY=1`）输出压缩 CSS，仅用于发布，本地开发不要用压缩产物。
 
 ## 架构
 
@@ -60,4 +60,6 @@ node dev/cdp.mjs fonts "#write p"     # 查看元素实际渲染的字体
 
 ## 发布
 
-无 CI。发布时构建后手动打包 `onelight.css`、`onelight-dark.css` 和 `onelight/`（资源）为 zip。
+由 `.github/workflows/release.yml` 自动完成：推 `v*` tag 时依次执行 lint → build（压缩产物写到 `dist/`）→ 把 `onelight.css`、`onelight-dark.css`、`onelight/` 打包成 `onelight-<tag>.zip` 并发布 Release。tag 必须与 `package.json` 的 version 一致（如 version `1.12.4` 对应 tag `v1.12.4`）。手动触发（workflow_dispatch）只上传构建产物，不建 Release。
+
+本地临时打包仍可手动执行：`pnpm build` 后把两个 CSS 和 `onelight/` 目录压成 zip。

@@ -1,6 +1,7 @@
 // Compile the two theme entry points straight into Typora's themes directory.
 //   node scripts/build.mjs           # one-off build
 //   node scripts/build.mjs --watch   # rebuild on any .scss change
+//   node scripts/build.mjs --minify  # compressed CSS for releases (or MINIFY=1)
 //
 // Override the output directory with TYPORA_THEMES (defaults to
 // %APPDATA%\Typora\themes on Windows).
@@ -11,6 +12,7 @@ import * as sass from 'sass';
 const ROOT = path.resolve(import.meta.dirname, '..');
 const OUT_DIR = process.env.TYPORA_THEMES
   || path.join(process.env.APPDATA || path.join(process.env.HOME || '.', '.config'), 'Typora', 'themes');
+const MINIFY = process.argv.includes('--minify') || process.env.MINIFY === '1';
 
 const TARGETS = [
   ['src/onelight.scss', 'onelight.css'],
@@ -28,7 +30,7 @@ function build() {
     const outFile = path.join(OUT_DIR, output);
     try {
       const { css } = sass.compile(path.join(ROOT, input), {
-        style: 'expanded',
+        style: MINIFY ? 'compressed' : 'expanded',
         sourceMap: false,
         // Keep emitted CSS stable across machines.
         charset: false,

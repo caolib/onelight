@@ -6,6 +6,7 @@
   "packageManager": "pnpm@12.5.1",
   "scripts": {
     "build": "node scripts/build.mjs",
+    "build:min": "node scripts/build.mjs --minify",
     "watch": "node scripts/build.mjs --watch",
     "lint": "stylelint \"src/**/*.scss\"",
     "lint:fix": "stylelint \"src/**/*.scss\" --fix"
