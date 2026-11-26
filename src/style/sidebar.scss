@@ -10,6 +10,13 @@
     --bd-color: var(--outline-color);
 }
 
+/* 深色模式下降一档，避免大段侧边栏文字刺眼（浅色模式沿用继承色） */
+#typora-sidebar,
+#typora-sidebar .sidebar-tab,
+.outline-content .outline-item {
+    color: var(--sidebar-text-color);
+}
+
 .os-windows .ty-show-outline-filter #sidebar-content .sidebar-content-content {
     margin-top: -4px;
 }
@@ -212,12 +219,12 @@
 
 .outline-content .outline-item.outline-item-active,
 .outline-content .outline-item.outline-item-active:hover {
-    background: var(--theme-color);
+    background: var(--accent-block-bg);
 }
 
 .outline-content .outline-item.outline-item-active>.outline-label,
 .outline-content .outline-item.outline-item-active>.outline-expander::before {
-    color: white;
+    color: var(--accent-block-text);
 }
 
 .ty-on-outline-filter .outline-content .outline-item::before,

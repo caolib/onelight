@@ -24,8 +24,8 @@
 .typora-quick-open-item-title>b {
     border-radius: var(--radius-xsmall);
     padding: 2px;
-    color: red;
-    background: yellow;
+    color: var(--quickopen-hit-text-color);
+    background: var(--quickopen-hit-bg);
 }
 
 .typora-quick-open-item.active {
@@ -56,7 +56,7 @@
 
 ::-webkit-scrollbar-thumb {
     border-radius: var(--radius-small);
-    background: rgba(0, 0, 0, .1);
+    background: var(--scrollbar-thumb-color);
     width: 10px
 }
 
@@ -113,7 +113,7 @@ ul#megamenu-menu-list {
 .megamenu-menu-header {
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    background: #2e2e2e;
+    background: var(--megamenu-header-bg);
     border-bottom: unset;
     height: 90px;
     position: relative;
@@ -221,7 +221,7 @@ li[data-group="dev-tool"]:hover {
 
 /* ---------------->> 任务列表按钮 <<---------------- */
 .ty-check:before {
-    color: rgb(0, 187, 0);
+    color: var(--task-check-color);
 }
 
 /* ---------------->> 删除按钮 <<---------------- */

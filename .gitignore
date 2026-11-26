@@ -3,3 +3,7 @@ node_modules/
 .DS_Store
 
 dev/*.png
+
+# 本地保留、不入库：代码块复制按钮插件
+/plugin/
+/scripts/install-plugin.mjs

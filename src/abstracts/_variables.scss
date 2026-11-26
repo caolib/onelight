@@ -24,6 +24,60 @@
     --main-green: #2ed573;
     --main-purple: #c94ae9;
     --main-yellow: #f9b03d;
+    /* ---------------->> 语义色：样式文件里不再直接写颜色值 <<---------------- */
+    /* 警告框 */
+    --alert-tip-color: rgb(31, 136, 61);
+    --alert-note-color: rgb(9, 105, 218);
+    --alert-important-color: rgb(130, 80, 223);
+    --alert-caution-color: rgb(207, 34, 46);
+    --alert-warning-color: rgb(250, 173, 20);
+    --alert-code-text-color: #fff;
+    /* 代码块与语法高亮 */
+    --code-bg-color: #fff;
+    --code-bg-color-light: #f3f3f3;
+    --code-bg-color-active: #f3f3f3;
+    --code-selected-text-color: #fff;
+    --diagram-text-color: #333;
+    --code-operator-color: #89ddff;
+    --code-type-color: #ea6717;
+    --code-builtin-color: #ffcb6b;
+    --code-atom-color: #f78c6c;
+    --code-number-color: #ff5370;
+    --code-def-color: #ff8c00;
+    --code-string-color: #00ad47;
+    --code-string-2-color: #f07178;
+    --code-comment-color: #003011;
+    --code-variable-color: #42a5f5;
+    --code-attribute-color: #e26fff;
+    --code-error-color: #e9405c;
+    --inline-code-color: #eb4c37;
+    --source-comment-color: green;
+    --source-tag-color: #ff7800;
+    --source-activeline-bg: hsla(0, 0%, 60%, .2);
+    /* 编辑器、菜单、侧边栏 */
+    --scrollbar-thumb-color: rgba(0, 0, 0, .1);
+    --megamenu-header-bg: #2e2e2e;
+    --megamenu-text-color: #000;
+    --task-check-color: rgb(0, 187, 0);
+    --task-checkbox-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.5l3 3L12.5 5' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    --quickopen-hit-text-color: red;
+    --quickopen-hit-bg: yellow;
+    --blockmeta-color: gray;
+    --input-border-color: #c2c2c2;
+    --tooltip-link-color: rgb(145 205 255);
+    --notification-bg: #ff00001a;
+    --h4-link-color: white;
+    /* 标题与实心色块（深色主题会整体降一档，见 _variables-dark.scss） */
+    --heading-color: var(--text-color);
+    --sidebar-text-color: var(--text-color);
+    --accent-block-bg: var(--theme-color);
+    --accent-block-text: #fff;
+    /* 搜索与高亮 */
+    --search-hit-bg: #ff0;
+    --search-hit-text-color: red;
+    --search-hit-plain-text-color: black;
+    --highlight-bg: #ff0;
+    --highlight-text-color: red;
     /* 警告框文字色：黄色对比度不足，改用深一档 */
     --alert-warning-text-color: #8a5a00;
     --light-color: #b2b2b2;

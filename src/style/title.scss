@@ -9,6 +9,8 @@
     padding: 0;
     position: relative;
     font-weight: 600;
+    /* 标题色单独成变量，深色模式降一档 */
+    color: var(--heading-color);
 }
 
 
@@ -72,8 +74,8 @@
     width: fit-content;
     margin: 1em 0;
     padding: .15em .55em;
-    color: #fff;
-    background: var(--theme-color);
+    color: var(--accent-block-text);
+    background: var(--accent-block-bg);
     border-radius: var(--radius-xsmall);
 }
 

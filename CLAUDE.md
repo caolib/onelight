@@ -52,7 +52,8 @@ node dev/cdp.mjs fonts "#write p"     # 查看元素实际渲染的字体
 
 ## 约定
 
-- 颜色一律走 CSS 变量，改配色优先改变量而非逐个选择器。
+- 颜色一律走 CSS 变量，改配色优先改变量而非逐个选择器。样式文件里不出现任何颜色字面量（含 white/red 等命名色），全部集中在 `abstracts/_variables.scss`，深色差异写在 `_variables-dark.scss`。
+- 每处样式改动都要在深色模式（OneLight Dark）下验证一遍，包括侧边栏、菜单等外围 UI；新增变量时同步考虑 `abstracts/_variables-dark.scss`。
 - 尽量不用 `!important`。
 - 用最少的代码达到效果。
 

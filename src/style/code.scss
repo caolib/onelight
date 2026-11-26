@@ -1,9 +1,3 @@
-:root {
-    --code-bg-color: #fff;
-    --code-bg-color-light: #f3f3f3;
-    --code-bg-color-active: #f3f3f3;
-}
-
 /* ---------------->> 代码框右下角的语言类型显示 <<---------------- */
 pre.md-fences.md-end-block.ty-contain-cm::after {
     content: attr(lang);
@@ -43,7 +37,7 @@ pre.CodeMirror-line>span {
 /* ---------------->> 代码块选中 <<---------------- */
 .CodeMirror-selected,
 .CodeMirror-selectedtext {
-    color: white !important;
+    color: var(--code-selected-text-color) !important;
     background: var(--select-text-bg-color) !important;
 }
 
@@ -62,7 +56,7 @@ pre[lang=flow],
 pre[lang=mermaid],
 pre[lang=sequence] {
     background: var(--theme-light-color);
-    color: #333
+    color: var(--diagram-text-color)
 }
 
 pre[lang=diff] .cm-s-inner .cm-error {
@@ -102,44 +96,44 @@ code {
 }
 
 .cm-s-inner .cm-operator {
-    color: #89ddff
+    color: var(--code-operator-color)
 }
 
 .cm-s-inner .cm-type,
 .cm-s-inner .cm-variable-3 {
-    color: #ea6717
+    color: var(--code-type-color)
 }
 
 .cm-s-inner .cm-builtin {
-    color: #ffcb6b
+    color: var(--code-builtin-color)
 }
 
 .cm-s-inner .cm-atom {
-    color: #f78c6c
+    color: var(--code-atom-color)
 }
 
 .cm-s-inner .cm-number {
-    color: #ff5370
+    color: var(--code-number-color)
 }
 
 .cm-s-inner .cm-def {
-    color: #ff8c00
+    color: var(--code-def-color)
 }
 
 .cm-s-inner .cm-string {
-    color: #00ad47
+    color: var(--code-string-color)
 }
 
 .cm-s-inner .cm-string-2 {
-    color: #f07178
+    color: var(--code-string-2-color)
 }
 
 .cm-s-inner .cm-comment {
-    color: #003011;
+    color: var(--code-comment-color);
 }
 
 .cm-s-inner .cm-variable {
-    color: #42a5f5
+    color: var(--code-variable-color)
 }
 
 .cm-s-inner .cm-meta {
@@ -147,7 +141,7 @@ code {
 }
 
 .cm-s-inner .cm-attribute {
-    color: #e26fff;
+    color: var(--code-attribute-color);
 }
 
 .cm-s-inner .cm-property,
@@ -156,7 +150,7 @@ code {
 }
 
 .cm-s-inner .cm-error {
-    border: solid 0.25px #e9405c;
+    border: solid 0.25px var(--code-error-color);
 }
 
 
@@ -168,7 +162,7 @@ code {
 
 #write code {
     background-color: var(--item-hover-bg-color);
-    color: #eb4c37;
+    color: var(--inline-code-color);
     font-family: var(--main-font-family);
     font-size: .9rem;
     font-size: .9rem;

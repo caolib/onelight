@@ -70,7 +70,7 @@ a {
 /* 取消四级标题的链接效果 */
 h4.md-end-block.md-heading a,
 h4.md-end-block.md-heading a>span {
-    color: white;
+    color: var(--h4-link-color);
     text-decoration: none;
 }
 
@@ -217,7 +217,7 @@ p.md-toc-content:hover {
 }
 
 .md-notification-content {
-    background: #ff00001a
+    background: var(--notification-bg)
 }
 
 
@@ -243,12 +243,12 @@ video {
 /* ---------------->> 脚注编辑视图 <<---------------- */
 .md-blockmeta {
     font-style: normal;
-    color: gray;
+    color: var(--blockmeta-color);
 }
 
 .ty-on-outline-filter .ty-outline-hit {
-    background: #ff0;
-    color: red;
+    background: var(--search-hit-bg);
+    color: var(--search-hit-text-color);
     font-weight: 700
 }
 
@@ -273,7 +273,7 @@ video {
 }
 
 .form-control:focus {
-    border-color: #c2c2c2;
+    border-color: var(--input-border-color);
     outline: 0
 }
 
@@ -285,7 +285,7 @@ input:focus {
 
 /* ---------------->> 脚注链接 <<---------------- */
 .code-tooltip-content a {
-    color: rgb(145 205 255);
+    color: var(--tooltip-link-color);
 }
 
 .megamenu-menu-list li a.active,
@@ -298,7 +298,7 @@ input:focus {
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     background-color: var(--bg-color);
-    color: #000
+    color: var(--megamenu-text-color)
 }
 
 .typora-node.pin-outline #md-searchpanel,
@@ -324,7 +324,7 @@ input:focus {
 .btn-primary:focus,
 .btn-primary:hover,
 .open>.dropdown-toggle.btn-primary {
-    color: #fff
+    color: var(--primary-btn-text-color)
 }
 
 .cm-s-inner .cm-header,
@@ -340,8 +340,8 @@ span[alt=highlight] {
     margin-left: 2px;
     border-radius: var(--radius-small);
     padding: 5px;
-    background: #ff0;
-    color: red;
+    background: var(--highlight-bg);
+    color: var(--highlight-text-color);
     box-shadow: var(--box-shadow);
 }
 
@@ -351,14 +351,14 @@ span[alt=highlight] {
 .md-search-select {
     padding: 2px 5px 2px 5px;
     border-radius: var(--radius-small);
-    background: #ff0 !important;
-    color: red !important;
+    background: var(--search-hit-bg) !important;
+    color: var(--search-hit-text-color) !important;
     box-shadow: var(--box-shadow);
 }
 
 .md-search-hit {
-    background: #ff0 !important;
-    color: black !important;
+    background: var(--search-hit-bg) !important;
+    color: var(--search-hit-plain-text-color) !important;
     box-shadow: var(--box-shadow);
 }
 
@@ -394,7 +394,7 @@ pre.md-fences-advanced.md-focus .md-fences-adv-panel {
 
 .cm-s-typora-default .cm-code,
 .cm-s-typora-default .cm-comment {
-    color: green;
+    color: var(--source-comment-color);
     font-family: var(--main-font-family)
 }
 
@@ -407,7 +407,7 @@ pre.md-fences-advanced.md-focus .md-fences-adv-panel {
 }
 
 .cm-s-typora-default .CodeMirror-activeline-background {
-    background: hsla(0, 0%, 60%, .2);
+    background: var(--source-activeline-bg);
     left: -60px;
     right: -30px
 }
@@ -430,7 +430,7 @@ pre.md-fences-advanced.md-focus .md-fences-adv-panel {
 
 
 .cm-s-typora-default .cm-tag {
-    color: #ff7800
+    color: var(--source-tag-color)
 }
 
 .cm-s-typora-default .cm-link {
