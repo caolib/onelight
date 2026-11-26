@@ -180,15 +180,22 @@ ul.dropdown-menu[aria-labelledby="recent-file-panel-action-btn"] {
 }
 
 /* ---------------->> 右键菜单 <<---------------- */
-.dropdown-menu,
+.dropdown-menu {
+    border-radius: var(--radius-small);
+    background-color: var(--glass-bg) !important;
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    transition: var(--glass-transition);
+}
+
 .menu-item-container a.menu-style-btn {
     border-radius: var(--radius-small);
-    background-color: var(--mica-bg) !important;
-    backdrop-filter: var(--mica-blur);
-    -webkit-backdrop-filter: var(--mica-blur);
+    background: transparent;
     border: var(--trans-border);
-    box-shadow: var(--box-shadow);
-    transition: var(--mica-transition);
+    box-shadow: none;
+    transition: var(--glass-transition);
 }
 
 .dropdown-menu .divider {

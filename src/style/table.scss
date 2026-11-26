@@ -9,11 +9,12 @@ figure.md-table-fig.table-figure {
 /* ---------------->> 表格调节组件 <<---------------- */
 .ty-table-edit {
     border-radius: var(--radius-small);
-    background-color: var(--mica-bg) !important;
-    backdrop-filter: var(--mica-blur);
-    border: var(--mica-border);
-    box-shadow: var(--box-shadow);
-    transition: var(--mica-transition);
+    background-color: var(--glass-bg) !important;
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    transition: var(--glass-transition);
     z-index: 999;
 }
 
