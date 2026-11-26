@@ -7,12 +7,11 @@
 */
 
 :root {
-    --bd-color: var(--text-color);
+    --bd-color: var(--outline-color);
 }
 
 .os-windows .ty-show-outline-filter #sidebar-content .sidebar-content-content {
     margin-top: -4px;
-    font-size: bold;
 }
 
 .os-windows .ty-show-search #sidebar-content .sidebar-content-content {
@@ -38,26 +37,21 @@
     z-index: 30;
 }
 
-.outline-content>li:first-of-type::before {
-    top: 0;
-}
-
 .outline-content li ul {
     position: relative;
-    z-index: 48;
-    margin-left: 18px;
+    z-index: 55;
+    margin-left: 14px;
     margin-top: 0 !important;
 }
 
 .no-collapse-outline .outline-content li ul {
-    margin-left: 21px;
+    margin-left: 17px;
 }
 
 .outline-content li .outline-item {
     position: relative;
     z-index: 50;
     margin: 0 0 3px 7px;
-    width: calc(100% + 6px);
     border-radius: 5px;
     border: none;
     line-height: 1;
@@ -82,20 +76,24 @@
     font-size: 12px;
 }
 
-.outline-item-open>.outline-item>.outline-expander:before {
-    margin-left: -4px;
-}
-
 .outline-content li .outline-label {
     display: inline-block;
+    box-sizing: border-box;
+    max-width: 100%;
     padding: 7px 7px 7px 8px;
-    font-size: 14px !important;
     line-height: 1.2;
     overflow-wrap: normal;
     word-wrap: normal;
     word-break: keep-all;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     text-decoration: none;
+}
+
+/* 顶层标题略加重，拉开与深层的层级感 */
+.outline-content>li>.outline-item>.outline-label {
+    font-weight: 600;
 }
 
 .outline-item-single .outline-label,
@@ -126,10 +124,10 @@
 .outline-content li .outline-item::before {
     content: '';
     position: absolute;
-    z-index: 38;
+    z-index: 60;
     left: -10px;
     top: -27.5px;
-    width: 10px;
+    width: 7px;
     height: calc(50% + 28px);
     background: transparent;
     border-left: 1px solid var(--bd-color);
@@ -177,7 +175,8 @@
 .outline-item-open>.outline-children::before {
     content: '';
     position: absolute;
-    left: -21px;
+    z-index: 60;
+    left: -17px;
     top: -26px;
     width: 1px;
     height: calc(100% + 12px);
@@ -186,7 +185,7 @@
 }
 
 .no-collapse-outline .outline-item-wrapper>.outline-children::before {
-    left: -24px;
+    left: -20px;
 }
 
 .no-collapse-outline .outline-content>li.outline-item-wrapper:first-child>.outline-children::before,
@@ -206,20 +205,20 @@
     margin-left: -8px;
 }
 
-.outline-item-active>.outline-label,
-.outline-item-active>.outline-label:hover,
-.outline-label:hover {
-    background: var(--theme-color);
-    color: white;
-    border-radius: 0;
-    border-bottom-left-radius: 10px;
-    border-top-right-radius: 10px;
+/* 悬停：浅色 tint；当前项：实心主题色，整行高亮 */
+.outline-content .outline-item:hover {
+    background: color-mix(in srgb, var(--theme-color) 14%, transparent);
 }
 
-/* .outline-item-active>.outline-label,
-.outline-item-active>.outline-expander::before {
-    color: var(--theme-color);
-} */
+.outline-content .outline-item.outline-item-active,
+.outline-content .outline-item.outline-item-active:hover {
+    background: var(--theme-color);
+}
+
+.outline-content .outline-item.outline-item-active>.outline-label,
+.outline-content .outline-item.outline-item-active>.outline-expander::before {
+    color: white;
+}
 
 .ty-on-outline-filter .outline-content .outline-item::before,
 .ty-on-outline-filter .outline-content .outline-item::after {
@@ -231,7 +230,7 @@
     margin-left: 0;
 }
 
-/* .oultine-item search result */
+/* .outline-item search result */
 .outline-content:has(.ty-outline-hit) {
     padding-left: 14px;
 }
@@ -244,7 +243,6 @@
 
 .outline-content li:has(.ty-outline-hit) .outline-item {
     margin-left: 1px !important;
-    width: calc(100% - 1px);
     padding-left: 0 !important;
 }
 
@@ -257,28 +255,6 @@
     font-weight: bold;
 }
 
-.outline-item>.outline-expander:hover+.outline-label,
-.outline-item-open>.outline-item>.outline-label {
-    padding-left: 11px;
-}
-
-.no-collapse-outline .outline-item-open>.outline-item>.outline-label {
-    padding-left: 0 !important;
-}
-
-.outline-item-active>.outline-expander:hover+.outline-label,
-.outline-item-open>.outline-item-active>.outline-label {
-    padding-left: 12px;
-}
-
-
-.outline-item-signle.outline-item-single>.outline-item>.outline-label.outline-active,
-.outline-item-signle.outline-item-single>.outline-item>.outline-label:hover {
-    border-radius: 0;
-    border-bottom-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
 input#file-library-search-input {
     width: 100% !important;
 }
@@ -286,8 +262,4 @@ input#file-library-search-input {
 #close-outline-filter-btn {
     right: 25px;
     top: 3px;
-}
-
-.outline-item-active>.outline-expander:before {
-    color: white;
 }
