@@ -1,10 +1,14 @@
 # OneLight
 
-一个为 Typora 设计的浅色/深色主题。
+一个简洁、美观的主题
+
+![OneLight 预览](docs/images/preview.png)
+
+上面是一张长图：左半为浅色主题，右半为深色主题。
 
 ## 安装
 
-把以下内容复制到 Typora 的主题目录（`%APPDATA%\Typora\themes`，或 Typora 偏好设置 → 外观 → 打开主题文件夹）：
+在 [Releases](https://github.com/caolib/onelight/releases) 下载主题包之后，解压后将以下内容复制到 Typora 的主题目录（`%APPDATA%\Typora\themes`，或 Typora 偏好设置 → 外观 → 打开主题文件夹）：
 
 - `onelight.css`
 - `onelight-dark.css`
@@ -53,14 +57,10 @@ src/
 scripts/build.mjs        构建脚本（dart-sass）
 dev/cdp.mjs              基于 CDP 的预览/调试工具
 docs/demo.md             预览用示例文档
+docs/showcase.md         README 预览图的源文档
+docs/images/preview.png  README 预览图（左浅色右深色）
 onelight/fonts/          资源字体
 ```
-
-## 约定
-
-- 颜色一律走 CSS 变量；改配色优先改变量，不要逐个选择器改。
-- 尽量不用 `!important`。
-- 用最少的代码达到效果。
 
 ## License
 
