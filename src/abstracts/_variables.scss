@@ -56,6 +56,7 @@
     --source-activeline-bg: hsla(0, 0%, 60%, .2);
     /* 编辑器、菜单、侧边栏 */
     --scrollbar-thumb-color: rgba(0, 0, 0, .1);
+    --scrollbar-thumb-hover-color: var(--scrollbar-thumb-color);
     --megamenu-header-bg: #2e2e2e;
     --megamenu-text-color: #000;
     --task-check-color: rgb(0, 187, 0);
@@ -67,6 +68,8 @@
     --tooltip-link-color: rgb(145 205 255);
     --notification-bg: #ff00001a;
     --h4-link-color: white;
+    --paragraph-hover-bg: var(--theme-light-color);
+    --toc-bg: var(--gradient-color);
     /* 标题与实心色块（深色主题会整体降一档，见 _variables-dark.scss） */
     --heading-color: var(--text-color);
     --sidebar-text-color: var(--text-color);

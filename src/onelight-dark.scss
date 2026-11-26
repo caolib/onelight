@@ -4,7 +4,7 @@
 
 /* 目录 */
 p.md-toc-content {
-    background: #292929;
+    background: var(--toc-bg);
 }
 
 /* 代码块文本 */
@@ -63,7 +63,7 @@ pre.CodeMirror-line>span {
 /* 有序列表序号 */
 #write .ol>.li:before,
 #write ol>li:before {
-    color: white;
+    color: var(--ol-marker-color, inherit);
 }
 
 /* 源码切换按钮 */
@@ -74,27 +74,23 @@ pre.CodeMirror-line>span {
 
 /* Github风格警告框 */
 .md-alert-tip {
-    --border-color: color-mix(in srgb, var(--alert-theme-color) var(--darken-ratio), black);
+    --border-color: color-mix(in srgb, var(--alert-theme-color) var(--darken-ratio), var(--darken-color));
 }
 
 .md-alert-note {
-    --border-color: color-mix(in srgb, var(--alert-theme-color) var(--darken-ratio), black);
+    --border-color: color-mix(in srgb, var(--alert-theme-color) var(--darken-ratio), var(--darken-color));
 }
 
 .md-alert-important {
-    --border-color: color-mix(in srgb, var(--alert-theme-color) var(--darken-ratio), black);
+    --border-color: color-mix(in srgb, var(--alert-theme-color) var(--darken-ratio), var(--darken-color));
 }
 
 .md-alert-caution {
-    --border-color: color-mix(in srgb, var(--alert-theme-color) var(--darken-ratio), black);
+    --border-color: color-mix(in srgb, var(--alert-theme-color) var(--darken-ratio), var(--darken-color));
 }
 
 .md-alert-warning {
-    --border-color: color-mix(in srgb, var(--alert-theme-color) var(--darken-ratio), black);
-}
-
-.cm-s-inner .cm-comment {
-    color: #cdcdcd;
+    --border-color: color-mix(in srgb, var(--alert-theme-color) var(--darken-ratio), var(--darken-color));
 }
 
 
@@ -108,14 +104,14 @@ pre.CodeMirror-line>span {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: rgb(134 134 134 / 27%);
+    background-color: var(--scrollbar-thumb-color);
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: var(--scrollbar-thumb-hover-color);
 }
 
 #write p:not(:has(.md-image)):hover {
-    background: #141414;
+    background: var(--paragraph-hover-bg);
 }

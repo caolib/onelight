@@ -44,6 +44,7 @@
     --border-color: var(--theme-color);
     --border: solid 0.5px var(--theme-color)94;
     --code-bg-color: #1b1e24;
+    --code-comment-color: #cdcdcd;
     --code-bg-color-light: #3d404e;
     --code-bg-color-active: #414855;
     /* ---------------->> 悬浮 <<---------------- */
@@ -52,6 +53,13 @@
     /* ---------------->> 阴影 <<---------------- */
     --box-shadow: 0px 4px 4px rgba(0, 0, 0, .3);
     --brightness: brightness(0.8);
+    /* 深色专用：色块压暗基准、目录/段落悬停底色、滚动条 */
+    --darken-color: black;
+    --paragraph-hover-bg: #141414;
+    --toc-bg: #292929;
+    --ol-marker-color: white;
+    --scrollbar-thumb-color: rgb(134 134 134 / 27%);
+    --scrollbar-thumb-hover-color: rgba(255, 255, 255, 0.5);
     /* ---------------->> 过渡 <<---------------- */
     --transition: box-shadow 0.3s ease, transform 0.3s ease;
     --bg-transition: background-color 0.5s ease;

@@ -14,6 +14,7 @@ Typora 主题（OneLight）。源码是 SCSS，编译产物是**单文件 CSS**�
 pnpm install
 pnpm build     # 一次性构建
 pnpm watch     # 监听 src/**/*.scss，自动重新编译
+pnpm lint      # stylelint：语法/低级错误 + 颜色字面量集中
 ```
 
 `scripts/build.mjs` 用 dart-sass 编译两个入口，输出路径由环境变量 `TYPORA_THEMES` 决定（默认 `%APPDATA%\Typora\themes`）。产物不提交到本仓库。
@@ -52,7 +53,7 @@ node dev/cdp.mjs fonts "#write p"     # 查看元素实际渲染的字体
 
 ## 约定
 
-- 颜色一律走 CSS 变量，改配色优先改变量而非逐个选择器。样式文件里不出现任何颜色字面量（含 white/red 等命名色），全部集中在 `abstracts/_variables.scss`，深色差异写在 `_variables-dark.scss`。
+- 颜色一律走 CSS 变量，改配色优先改变量而非逐个选择器。样式文件里不出现任何颜色字面量（含 white/red 等命名色），全部集中在 `abstracts/_variables.scss`，深色差异写在 `_variables-dark.scss`；`pnpm lint` 的 `color-no-hex` / `color-named` 会在 `abstracts/` 之外拦截。
 - 每处样式改动都要在深色模式（OneLight Dark）下验证一遍，包括侧边栏、菜单等外围 UI；新增变量时同步考虑 `abstracts/_variables-dark.scss`。
 - 尽量不用 `!important`。
 - 用最少的代码达到效果。

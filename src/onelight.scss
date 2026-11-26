@@ -30,7 +30,7 @@
 #write p:not(:has(.md-image)):hover {
     box-shadow: var(--box-shadow);
     border-radius: var(--radius-xsmall);
-    background: var(--theme-light-color);
+    background: var(--paragraph-hover-bg);
 }
 
 #write p:has(.md-image):hover::before {
@@ -197,7 +197,7 @@ hr {
 p.md-toc-content {
     padding-left: 10px !important;
     margin-left: 20px !important;
-    background: var(--gradient-color);
+    background: var(--toc-bg);
     border-radius: var(--radius-small);
     box-shadow: var(--box-shadow);
 }

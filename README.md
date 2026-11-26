@@ -20,6 +20,7 @@
 pnpm install
 pnpm build     # 一次性构建
 pnpm watch     # 监听 src/，改动即重新编译
+pnpm lint      # stylelint 检查（颜色字面量只允许出现在变量文件）
 ```
 
 默认输出到 `%APPDATA%\Typora\themes`，可通过环境变量 `TYPORA_THEMES` 覆盖。

@@ -6,9 +6,14 @@
   "packageManager": "pnpm@12.5.1",
   "scripts": {
     "build": "node scripts/build.mjs",
-    "watch": "node scripts/build.mjs --watch"
+    "watch": "node scripts/build.mjs --watch",
+    "lint": "stylelint \"src/**/*.scss\"",
+    "lint:fix": "stylelint \"src/**/*.scss\" --fix"
   },
   "devDependencies": {
-    "sass": "^1.108.2"
+    "postcss-scss": "^4.0.9",
+    "sass": "^1.108.2",
+    "stylelint": "^18.1.0",
+    "stylelint-scss": "^7.5.0"
   }
 }
