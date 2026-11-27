@@ -1,0 +1,46 @@
+/* ---------------->> 偏好设置窗口 <<---------------- */
+
+/* 左侧分类：当前项用主题色 tint，替代 Typora 默认的灰底 */
+.ty-preferences .nav-group-item {
+    padding: 4px 8px;
+    border-radius: var(--radius-xsmall);
+}
+
+.ty-preferences .nav-group-item:hover {
+    background: color-mix(in srgb, var(--theme-color) 8%, transparent);
+}
+
+.ty-preferences .nav-group-item.active,
+.ty-preferences .nav-group-item.active:hover {
+    background: color-mix(in srgb, var(--theme-color) 12%, transparent);
+    color: var(--theme-color);
+}
+
+/* 输入框、下拉框、按钮：圆角、描边、底色统一 */
+.ty-preferences select,
+.ty-preferences input.search-input,
+.ty-preferences input[type="text"],
+.ty-preferences .btn {
+    border-color: var(--input-border-color);
+    border-radius: var(--radius-xsmall);
+    background: var(--theme-light-color);
+    color: var(--text-color);
+}
+
+.ty-preferences select:focus,
+.ty-preferences input.search-input:focus,
+.ty-preferences input[type="text"]:focus {
+    border-color: var(--theme-color);
+}
+
+.ty-preferences .btn:hover {
+    border-color: var(--theme-color);
+    background: color-mix(in srgb, var(--theme-color) 9%, transparent);
+    color: var(--theme-color);
+}
+
+/* 复选框/单选框改用主题色 */
+.ty-preferences input[type="checkbox"],
+.ty-preferences input[type="radio"] {
+    accent-color: var(--theme-color);
+}
