@@ -261,12 +261,21 @@ ul.dropdown-menu[aria-labelledby="recent-file-panel-action-btn"] {
     border-radius: var(--radius-small);
     background: transparent;
     border: var(--trans-border);
-    box-shadow: none;
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--sidebar-text-color) 12%, transparent);
     transition: var(--glass-transition);
 }
 
+/* 分组分隔线：内缩细线，避免菜单项连成一片 */
 .dropdown-menu .divider {
     opacity: 0;
+}
+
+.context-menu .divider {
+    height: 1px;
+    margin: 4px 8px;
+    border: 0;
+    opacity: 1;
+    background-color: color-mix(in srgb, var(--sidebar-text-color) 12%, transparent);
 }
 
 .menu-item-container {
