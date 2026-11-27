@@ -2,19 +2,21 @@
     --transparency: 0.1;
 }
 
-#write {
+/* ---------------->> 引用块 <<---------------- */
+/* body>blockquote 用于主题预览卡片（iframe 内没有 #write 包裹） */
+#write blockquote,
+body>blockquote {
+    background: color-mix(in srgb, var(--theme-color) 6%, var(--bg-color));
+    border-bottom-right-radius: 10px;
+    border-left: 5px solid var(--theme-color);
+    border-top-right-radius: 10px;
+    box-shadow: var(--box-shadow);
+    color: color-mix(in srgb, var(--text-color) 90%, transparent);
+    margin: 16px 0;
+    padding: 12px 16px;
+}
 
-    /* ---------------->> 引用块 <<---------------- */
-    blockquote {
-        background: color-mix(in srgb, var(--theme-color) 6%, var(--bg-color));
-        border-bottom-right-radius: 10px;
-        border-left: 5px solid var(--theme-color);
-        border-top-right-radius: 10px;
-        box-shadow: var(--box-shadow);
-        color: color-mix(in srgb, var(--text-color) 90%, transparent);
-        margin: 16px 0;
-        padding: 12px 16px;
-    }
+#write {
 
     blockquote p {
         line-height: 26px

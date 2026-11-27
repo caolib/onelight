@@ -9,11 +9,11 @@
 }
 
 .theme-preview-div:hover {
-    border-color: var(--main-green);
+    border-color: var(--side-bar-menu-active-tint);
 }
 
 .theme-preview-div.active>i::before {
-    color: var(--main-green);
+    color: var(--side-bar-menu-active-tint);
 }
 
 #theme-preview-grid {
