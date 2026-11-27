@@ -49,6 +49,24 @@ export function applyTheme({ name, dark }: ThemeOptions) {
 }
 ```
 
+```diff
+ interface ThemeOptions {
+     name: string;
+     dark: boolean;
++    accent?: string;
+ }
+
+-export function applyTheme({ name, dark }: ThemeOptions) {
++export function applyTheme({ name, dark, accent }: ThemeOptions) {
+     const root = document.documentElement;
+     root.dataset.theme = name;
++    root.dataset.accent = accent ?? 'default';
+     root.classList.toggle('dark', dark);
+-    return dark ? 'onelight-dark.css' : 'onelight.css';
++    return dark ? 'onelight-dark.css' : 'onelight.css';
+ }
+```
+
 ## 列表
 
 - 无序列表

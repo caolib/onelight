@@ -192,6 +192,8 @@ const { cdp, ws } = await connect();
 try {
   if (cmd === 'eval') {
     console.log(await cdp.evalExpr(process.argv[3] || '1+1'));
+  } else if (cmd === 'eval-file') {
+    console.log(await cdp.evalExpr(fs.readFileSync(process.argv[3], 'utf8')));
   } else if (cmd === 'dom') {
     console.log(await domTree(cdp, process.argv[3] || '#write', Number(process.argv[4] ?? 3)));
   } else if (cmd === 'html') {

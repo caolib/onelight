@@ -65,6 +65,25 @@ pre[lang=diff] .cm-s-inner .cm-error {
     background-color: transparent;
 }
 
+/* diff 增删行：整行极淡底色，阴影补齐左右内边距 */
+pre[lang=diff] .CodeMirror-line:has(.cm-positive) {
+    background-color: var(--diff-add-bg);
+    box-shadow: 13px 0 0 var(--diff-add-bg), -13px 0 0 var(--diff-add-bg);
+}
+
+pre[lang=diff] .CodeMirror-line:has(.cm-negative) {
+    background-color: var(--diff-del-bg);
+    box-shadow: 13px 0 0 var(--diff-del-bg), -13px 0 0 var(--diff-del-bg);
+}
+
+pre[lang=diff] .cm-positive {
+    color: var(--diff-add-text);
+}
+
+pre[lang=diff] .cm-negative {
+    color: var(--diff-del-text);
+}
+
 /* ---------------->> 代码块 <<---------------- */
 .md-fences,
 code {
@@ -92,7 +111,7 @@ code {
 
 /* 代码配色 */
 .cm-s-inner .cm-keyword {
-    color: var(--main-purple)
+    color: var(--code-keyword-color)
 }
 
 .cm-s-inner .cm-operator {
@@ -137,7 +156,7 @@ code {
 }
 
 .cm-s-inner .cm-meta {
-    color: var(--main-red)
+    color: var(--code-meta-color)
 }
 
 .cm-s-inner .cm-attribute {
@@ -146,7 +165,7 @@ code {
 
 .cm-s-inner .cm-property,
 .cm-s-inner .cm-qualifier {
-    color: var(--main-red)
+    color: var(--code-meta-color)
 }
 
 .cm-s-inner .cm-error {
@@ -188,5 +207,5 @@ code {
 
 /* 行内代码 */
 #write code {
-    background-color: var(--code-bg-color);
+    background-color: var(--code-inline-bg);
 }

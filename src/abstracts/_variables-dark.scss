@@ -44,9 +44,29 @@
     --border-color: var(--theme-color);
     --border: solid 0.5px var(--theme-color)94;
     --code-bg-color: #1b1e24;
+    --code-inline-bg: var(--code-bg-color);
     --code-comment-color: #cdcdcd;
+    /* 语法高亮：深色沿用原亮色板 */
+    --code-operator-color: #89ddff;
+    --code-type-color: #ea6717;
+    --code-builtin-color: #ffcb6b;
+    --code-atom-color: #f78c6c;
+    --code-number-color: #ff5370;
+    --code-def-color: #ff8c00;
+    --code-string-color: #00ad47;
+    --code-string-2-color: #f07178;
+    --code-variable-color: #42a5f5;
+    --code-attribute-color: #e26fff;
+    --code-error-color: #e9405c;
+    --code-keyword-color: #cd63ee;
+    --code-meta-color: var(--main-red);
+    --inline-code-color: #ef5545;
     --code-bg-color-light: #3d404e;
     --code-bg-color-active: #414855;
+    --diff-add-bg: color-mix(in srgb, var(--main-green) 22%, transparent);
+    --diff-del-bg: color-mix(in srgb, var(--main-red) 20%, transparent);
+    --diff-add-text: #7fd6a0;
+    --diff-del-text: #ff9b9b;
     /* ---------------->> 悬浮 <<---------------- */
     --item-bg-color-red: rgb(from var(--main-red) r g b / 0.22);
     --item-bg-color-blue: rgb(from var(--theme-color) r g b / 0.26);
