@@ -12,20 +12,6 @@ pre.CodeMirror-line>span {
     color: var(--text-color);
 }
 
-/* 引用块 */
-#write blockquote {
-    border: solid 2px var(--theme-color);
-    border-left: 5px solid var(--border-color);
-    border-left-color: var(--border-color) !important;
-    background: unset;
-}
-
-#write blockquote:hover {
-    transition: var(--bg-transition);
-    background: var(--bg-color);
-    box-shadow: var(--box-shadow-large);
-}
-
 /* 一体化菜单选项 */
 .megamenu-menu-list li a {
     color: var(--text-color) !important;
