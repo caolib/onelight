@@ -158,11 +158,12 @@ async function pressKey(cdp, combo) {
   await cdp.send('Input.dispatchKeyEvent', { type: 'keyUp', ...params });
 }
 
-async function clickAt(cdp, x, y) {
+async function clickAt(cdp, x, y, button = 'left') {
+  const buttons = button === 'right' ? 2 : 1;
   await mouseMove(cdp, x, y);
-  await cdp.send('Input.dispatchMouseEvent', { type: 'mousePressed', x, y, button: 'left', buttons: 1, clickCount: 1, pointerType: 'mouse' });
+  await cdp.send('Input.dispatchMouseEvent', { type: 'mousePressed', x, y, button, buttons, clickCount: 1, pointerType: 'mouse' });
   await new Promise(r => setTimeout(r, 40));
-  await cdp.send('Input.dispatchMouseEvent', { type: 'mouseReleased', x, y, button: 'left', buttons: 0, clickCount: 1, pointerType: 'mouse' });
+  await cdp.send('Input.dispatchMouseEvent', { type: 'mouseReleased', x, y, button, buttons: 0, clickCount: 1, pointerType: 'mouse' });
 }
 
 async function domTree(cdp, sel, depth) {
@@ -195,12 +196,12 @@ try {
     console.log(await domTree(cdp, process.argv[3] || '#write', Number(process.argv[4] ?? 3)));
   } else if (cmd === 'html') {
     console.log(await cdp.evalExpr(`(document.querySelector(${JSON.stringify(process.argv[3] || '#write')}) || {}).outerHTML || 'not found'`));
-  } else if (cmd === 'hover' || cmd === 'click') {
+  } else if (cmd === 'hover' || cmd === 'click' || cmd === 'rclick') {
     const sel = process.argv[3];
     if (!sel) throw new Error(`usage: node dev/cdp.mjs ${cmd} <selector>`);
     const t = await targetCenter(cdp, sel);
     if (cmd === 'hover') await mouseMove(cdp, t.x, t.y);
-    else await clickAt(cdp, t.x, t.y);
+    else await clickAt(cdp, t.x, t.y, cmd === 'rclick' ? 'right' : 'left');
     console.log(`${cmd}: <${t.tag.toLowerCase()}${t.id ? '#' + t.id : ''}> at (${Math.round(t.x)}, ${Math.round(t.y)})${t.text ? ' "' + t.text + '"' : ''}`);
   } else if (cmd === 'key') {
     if (!process.argv[3]) throw new Error('usage: node dev/cdp.mjs key <combo>');
