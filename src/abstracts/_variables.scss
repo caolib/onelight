@@ -32,6 +32,10 @@
     --alert-caution-color: rgb(207, 34, 46);
     --alert-warning-color: rgb(250, 173, 20);
     --alert-code-text-color: #fff;
+    /* 行内标记 */
+    --mark-bg: color-mix(in srgb, var(--theme-color) 50%, var(--bg-color));
+    --mark-text-color: #1f1206;
+    --del-text-color: color-mix(in srgb, var(--text-color) 55%, var(--bg-color));
     /* 代码块与语法高亮 */
     --code-bg-color: #EDEDED;
     --code-inline-bg: #fff;
@@ -57,7 +61,7 @@
     --code-keyword-color: #8e24aa;
     --code-meta-color: #c62828;
     --code-error-color: #e9405c;
-    --inline-code-color: #cf3f2c;
+    --inline-code-color: #c0392b;
     --source-comment-color: green;
     --source-tag-color: #ff7800;
     --source-activeline-bg: hsla(0, 0%, 60%, .2);

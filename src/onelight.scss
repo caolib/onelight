@@ -125,13 +125,13 @@ a.md-toc-inner {
 
 /* ---------------->> 高亮 <<---------------- */
 mark {
-    margin-right: 2px;
-    margin-left: 2px;
-    border-radius: var(--radius-small);
-    padding: 2px 5px 2px 5px;
-    border: 1.5px solid;
-    background: transparent;
-    color: var(--main-red);
+    background-color: var(--mark-bg);
+    color: var(--mark-text-color);
+}
+
+/* ---------------->> 删除线 <<---------------- */
+#write del {
+    color: var(--del-text-color);
 }
 
 
