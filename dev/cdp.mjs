@@ -11,6 +11,7 @@
 //   node dev/cdp.mjs html [selector]
 //   node dev/cdp.mjs hover <selector>
 //   node dev/cdp.mjs click <selector>
+//   node dev/cdp.mjs key <combo>            # 如 ctrl+p、escape
 //   node dev/cdp.mjs unhover
 //
 // Requires Typora running with --remote-debugging-port=9222 (see dev/README.md).
@@ -25,7 +26,15 @@ const THEMES = process.env.TYPORA_THEMES
 async function pickTarget() {
   const res = await fetch(`http://127.0.0.1:${PORT}/json/list`);
   const list = await res.json();
-  const page = list.find(t => t.type === 'page' && /window\.html/.test(t.url))
+  const pages = list.filter(t => t.type === 'page' && /window\.html/.test(t.url));
+  // TYPORA_CDP_TARGET 可指定窗口：target id 前缀或从 0 开始的序号
+  const pick = process.env.TYPORA_CDP_TARGET;
+  if (pick !== undefined) {
+    const page = pages.find(t => t.id.startsWith(pick)) || pages[Number(pick)];
+    if (!page) throw new Error(`No Typora window matching TYPORA_CDP_TARGET=${pick}`);
+    return page;
+  }
+  const page = pages[0]
     || list.find(t => t.type === 'page' && t.title === 'Typora');
   if (!page) throw new Error('Typora editor page not found. Is Typora running with remote debugging?');
   return page;
@@ -120,6 +129,35 @@ async function mouseMove(cdp, x, y) {
   });
 }
 
+const MODIFIERS = { alt: 1, ctrl: 2, meta: 4, shift: 8 };
+const KEY_CODES = {
+  enter: { key: 'Enter', code: 'Enter', windowsVirtualKeyCode: 13, text: '\r' },
+  escape: { key: 'Escape', code: 'Escape', windowsVirtualKeyCode: 27 },
+  arrowdown: { key: 'ArrowDown', code: 'ArrowDown', windowsVirtualKeyCode: 40 },
+  arrowup: { key: 'ArrowUp', code: 'ArrowUp', windowsVirtualKeyCode: 38 },
+  tab: { key: 'Tab', code: 'Tab', windowsVirtualKeyCode: 9 },
+};
+
+// 发送真实键盘事件，如 "ctrl+p"、"ctrl+shift+p"、"escape"
+async function pressKey(cdp, combo) {
+  const parts = combo.toLowerCase().split('+').map(s => s.trim());
+  const name = parts.pop();
+  const modifiers = parts.reduce((m, p) => m | (MODIFIERS[p] || 0), 0);
+  const base = KEY_CODES[name] || {
+    key: name.length === 1 ? name : name,
+    code: name.length === 1 ? `Key${name.toUpperCase()}` : name,
+    windowsVirtualKeyCode: name.toUpperCase().charCodeAt(0),
+  };
+  const params = {
+    ...base,
+    modifiers,
+    text: modifiers & MODIFIERS.ctrl ? undefined : base.text,
+    unmodifiedText: modifiers & MODIFIERS.ctrl ? undefined : base.text,
+  };
+  await cdp.send('Input.dispatchKeyEvent', { type: 'rawKeyDown', ...params });
+  await cdp.send('Input.dispatchKeyEvent', { type: 'keyUp', ...params });
+}
+
 async function clickAt(cdp, x, y) {
   await mouseMove(cdp, x, y);
   await cdp.send('Input.dispatchMouseEvent', { type: 'mousePressed', x, y, button: 'left', buttons: 1, clickCount: 1, pointerType: 'mouse' });
@@ -164,6 +202,10 @@ try {
     if (cmd === 'hover') await mouseMove(cdp, t.x, t.y);
     else await clickAt(cdp, t.x, t.y);
     console.log(`${cmd}: <${t.tag.toLowerCase()}${t.id ? '#' + t.id : ''}> at (${Math.round(t.x)}, ${Math.round(t.y)})${t.text ? ' "' + t.text + '"' : ''}`);
+  } else if (cmd === 'key') {
+    if (!process.argv[3]) throw new Error('usage: node dev/cdp.mjs key <combo>');
+    await pressKey(cdp, process.argv[3]);
+    console.log('key: ' + process.argv[3]);
   } else if (cmd === 'unhover') {
     await mouseMove(cdp, 2, 2);
     console.log('mouse moved to (2, 2)');

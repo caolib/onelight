@@ -43,6 +43,17 @@ node dev/cdp.mjs html "#write h2"
 node dev/cdp.mjs hover "#write h2"
 node dev/cdp.mjs click "#write h2"
 node dev/cdp.mjs unhover
+
+# 真实键盘事件（可打开菜单/快捷命令，如 ctrl+p 快速打开、escape 关闭浮层）
+node dev/cdp.mjs key ctrl+p
+```
+
+## 多窗口
+
+同时开着多个 Typora 窗口时，默认只操作第一个。用 `TYPORA_CDP_TARGET` 指定窗口（target id 前缀或从 0 开始的序号）：
+
+```bash
+TYPORA_CDP_TARGET=1 node dev/cdp.mjs eval "document.title"
 ```
 
 ## 推荐工作流
