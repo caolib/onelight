@@ -171,9 +171,37 @@ ul#megamenu-menu-list {
     background: transparent;
 }
 
+/* ---------------->> 一体化模式背景：去掉 Typora 默认 cubes 底纹 <<---------------- */
+.megamenu-content {
+    background: var(--bg-color);
+}
+
 /* ---------------->> 一体化模式最近打开文件列表 <<---------------- */
 .megamenu-menu-panel table {
     font-weight: unset;
+}
+
+#recent-document-table thead th {
+    background: var(--tb-header-bg);
+    color: var(--text-color);
+}
+
+#recent-document-table thead th,
+#recent-document-table tbody td {
+    border-bottom: 0.5px solid var(--tb-border-color);
+}
+
+#recent-document-table tbody tr:nth-child(odd) {
+    background: var(--tb-zebra-bg);
+}
+
+#recent-document-table tbody tr:hover {
+    background: var(--tb-hover-bg);
+}
+
+/* 路径弱化成次要信息 */
+.recent-file-dir {
+    color: color-mix(in srgb, var(--sidebar-text-color) 62%, transparent);
 }
 
 /* ---------------->> 一体化模式左侧菜单 <<---------------- */
@@ -207,7 +235,8 @@ a#m-saved:hover {
 }
 
 a#megamenu-clear-recet-documents:hover {
-    background: transparent;
+    background: color-mix(in srgb, var(--theme-color) 9%, transparent);
+    color: var(--theme-color);
 }
 
 .megamenu-opened header {
@@ -222,6 +251,12 @@ a#megamenu-clear-recet-documents:hover {
 /* ---------------->> 一体化模式-打开-最近打开文件列表 <<---------------- */
 ul.dropdown-menu[aria-labelledby="recent-file-panel-action-btn"] {
     border-radius: var(--radius-small);
+    padding: 4px;
+}
+
+ul.dropdown-menu[aria-labelledby="recent-file-panel-action-btn"] li a {
+    padding: 6px 12px;
+    border-radius: var(--radius-xsmall);
 }
 
 .context-menu.dropdown-menu>.active>a,
@@ -391,14 +426,44 @@ div#md-searchpanel {
     border-radius: var(--radius-small);
 }
 
+.long-btn:hover {
+    border-color: var(--theme-color);
+    background: color-mix(in srgb, var(--theme-color) 9%, transparent);
+}
+
 .long-btn:last-of-type {
     min-width: 300px;
     width: fit-content;
 }
 
 
+/* ---------------->> 一体化模式-打开-搜索框与操作按钮 <<---------------- */
+#recent-file-panel-search-input {
+    width: calc(100% - 60px);
+    border-color: var(--input-border-color);
+    border-radius: var(--radius-xsmall);
+}
+
+#recent-file-panel-search-input:focus {
+    border-color: var(--theme-color);
+}
+
+/* 让按钮右缘与下方表格对齐 */
+#recent-file-panel-action-btn-container {
+    margin-right: 0;
+}
+
+#recent-file-panel-action-btn.btn {
+    border-color: var(--input-border-color);
+    border-radius: var(--radius-xsmall);
+    background: var(--theme-light-color);
+    color: var(--text-color);
+}
+
 #recent-file-panel-action-btn.btn:hover {
-    color: unset;
+    border-color: var(--theme-color);
+    background: color-mix(in srgb, var(--theme-color) 9%, transparent);
+    color: var(--theme-color);
 }
 
 /* 主题窗口版本标签 */

@@ -9,10 +9,11 @@
     --active-file-border-color: var(--main-red);
     --side-bar-bg-color: var(--bg-color);
     --item-hover-bg-color: hsla(0, 0%, 90%, .59);
-    --item-hover-text-color: var(--main-red);
+    --item-hover-text-color: var(--theme-color);
+    --focus-ring-color: var(--theme-color);
     --select-text-font-color: white !important;
     --select-text-bg-color: #3266D0;
-    --side-bar-menu-active-tint: var(--main-green);
+    --side-bar-menu-active-tint: var(--theme-color);
     --outline-color: #a5a5a5;
     --tb-border-color: #e8e8e8;
     --tb-header-bg: color-mix(in srgb, var(--theme-color) 12%, transparent);

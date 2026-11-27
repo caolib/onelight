@@ -291,7 +291,7 @@ input:focus {
 
 .megamenu-menu-list li a.active,
 .megamenu-menu-list:not(.saved) li a:hover {
-    background-color: var(--item-hover-bg-color);
+    background-color: color-mix(in srgb, var(--theme-color) 12%, transparent);
     color: var(--theme-color)
 }
 

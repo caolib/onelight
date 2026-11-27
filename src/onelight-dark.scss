@@ -12,30 +12,9 @@ pre.CodeMirror-line>span {
     color: var(--text-color);
 }
 
-/* 一体化菜单选项 */
-.megamenu-menu-list li a {
-    color: var(--text-color) !important;
-}
-
-/* 一体化菜单背景 */
-.megamenu-content,
-.megamenu-opened header {
-    background: var(--bg-color);
-}
-
 /* 一体化菜单标题 */
 .megamenu-menu-header {
     background: var(--bg-color);
-}
-
-/* 最近使用文件列表 */
-#recent-file-panel tbody tr:nth-child(2n-1) {
-    background-color: unset;
-}
-
-/* 最近使用文件操作按钮 */
-#recent-file-panel-action-btn {
-    background-color: unset;
 }
 
 
