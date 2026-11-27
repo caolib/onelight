@@ -73,7 +73,8 @@ span.megamenu-menu-header-title-back[data-localize=Back]:hover {
 
 /* ---------------->> 快速打开搜索框 <<---------------- */
 #typora-quick-open {
-    height: 80vh;
+    height: auto;
+    max-height: 72vh;
     width: 40vw;
     border-radius: var(--radius-xsmall);
     padding-right: 0;
@@ -83,19 +84,85 @@ div#typora-quick-open-input {
     padding: 0 5px;
 }
 
+#typora-quick-open-input input {
+    border-radius: var(--radius-xsmall);
+    border-color: var(--outline-color);
+}
+
 .typora-quick-open-list {
-    max-height: 95%;
+    max-height: calc(72vh - 60px);
+}
+
+/* 列表滚动条收细、降低存在感 */
+.typora-quick-open-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.typora-quick-open-list::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background: color-mix(in srgb, var(--sidebar-text-color) 16%, transparent);
+}
+
+.typora-quick-open-list::-webkit-scrollbar-thumb:hover {
+    background: color-mix(in srgb, var(--sidebar-text-color) 30%, transparent);
+}
+
+/* 行：圆角块，hover/active 用主题色 tint，不再整行阴影 */
+.typora-quick-open-item {
+    height: 44px;
+    margin: 0 8px;
+    padding: 4px 10px 0 12px;
+    border-radius: var(--radius-xsmall);
+}
+
+.typora-quick-open-item-title {
+    font-weight: 500;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.typora-quick-open-item-path {
+    margin-top: 0;
+    line-height: 15px;
+    opacity: 0.6;
 }
 
 .typora-quick-open-item:hover {
-    box-shadow: var(--box-shadow);
     cursor: pointer;
-    color: var(--theme-color);
-    background: var(--theme-light-color);
+    background: color-mix(in srgb, var(--theme-color) 9%, transparent);
+}
+
+.typora-quick-open-item.active {
+    background: color-mix(in srgb, var(--theme-color) 16%, transparent);
+}
+
+/* 分区标题弱化成灰色小字，分区之间用细分隔线区分 */
+.ty-quick-open-category + .ty-quick-open-category {
+    margin-top: 6px;
+}
+
+/* 文件夹条目图标（codicon，避免彩色 emoji） */
+#ty-quick-open-folder-category .typora-quick-open-item-title::before {
+    content: '\ea83';
+    display: inline-block;
+    margin-right: 6px;
+    font: normal 13px codicon;
+    line-height: 1;
+    vertical-align: -1px;
+    color: color-mix(in srgb, var(--sidebar-text-color) 55%, transparent);
 }
 
 .ty-quick-open-category-title {
-    color: var(--theme-color);
+    height: auto;
+    padding-top: 10px;
+    color: color-mix(in srgb, var(--sidebar-text-color) 55%, transparent);
+    letter-spacing: 0.04em;
+}
+
+.ty-quick-open-category.ty-has-prev .ty-quick-open-category-title {
+    margin: 0 8px;
+    padding-left: 12px;
+    border-top: 1px solid color-mix(in srgb, var(--sidebar-text-color) 16%, transparent);
 }
 
 /* ---------------->> 一体化模式的侧边菜单 <<---------------- */

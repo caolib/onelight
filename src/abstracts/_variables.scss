@@ -61,8 +61,8 @@
     --megamenu-text-color: #000;
     --task-check-color: rgb(0, 187, 0);
     --task-checkbox-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.5l3 3L12.5 5' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-    --quickopen-hit-text-color: red;
-    --quickopen-hit-bg: yellow;
+    --quickopen-hit-text-color: var(--theme-color);
+    --quickopen-hit-bg: color-mix(in srgb, var(--theme-color) 18%, transparent);
     --blockmeta-color: gray;
     --input-border-color: #c2c2c2;
     --tooltip-link-color: rgb(145 205 255);
